@@ -46,6 +46,7 @@ pipeline {
 
 	stage('Deploy to GKE Dev Namsespace') {
             steps {
+	        sh "cat Manifest/deployment.yaml"
 	        sh "sed -i 's/latest/${env.BUILD_ID}/g' Manifest/deployment.yaml"
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, zone: env.LOCATION, manifestPattern: 'Manifest/', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
             }     
