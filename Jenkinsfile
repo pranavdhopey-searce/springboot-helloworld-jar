@@ -3,7 +3,7 @@ pipeline {
     environment {
         PROJECT_ID = 'searce-playground'
         CLUSTER_NAME = 'pranav-cluster'
-        LOCATION = 'asia-soujth1-a'
+        LOCATION = 'asia-south1-a'
         CREDENTIALS_ID = 'searce-playground'
     }
 
